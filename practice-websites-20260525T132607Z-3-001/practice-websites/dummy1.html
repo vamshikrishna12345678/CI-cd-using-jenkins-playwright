@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Non Editable Textbox Demo</title>
+</head>
+<body>
+
+  <h2>Click the textbox to make it editable</h2>
+
+  <label for="nameBox">Name:</label>
+  <input 
+    id="nameBox"
+    type="text"
+    value="Click me first"
+    readonly
+  >
+
+  <p id="message">Textbox is currently non-editable.</p>
+
+  <script>
+    const nameBox = document.getElementById("nameBox");
+    const message = document.getElementById("message");
+
+    nameBox.addEventListener("click", function () {
+      nameBox.removeAttribute("readonly");
+      nameBox.value = "";
+      nameBox.focus();
+      message.textContent = "Textbox is now editable. You can type.";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Custom Dropdowns</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+        
+        .dropdown-container {
+            margin-bottom: 120px; /* Very large spacing */
+            position: relative;
+        }
+        
+        .dropdown-container:last-of-type {
+            margin-bottom: 40px;
+        }
+        
+        .label {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 12px;
+        }
+        
+        .custom-select {
+            position: relative;
+            width: 100%;
+            cursor: pointer;
+        }
+        
+        .select-trigger {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 16px 20px;
+            font-size: 16px;
+            color: #495057;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        
+        .select-trigger:hover {
+            border-color: #667eea;
+            background: #fff;
+        }
+        
+        .select-trigger.active {
+            border-color: #667eea;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .select-trigger.selected {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid #6c757d;
+            transition: transform 0.3s ease;
+        }
+        
+        .select-trigger.active .arrow {
+            transform: rotate(180deg);
+        }
+        
+        .options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 12px;
+            margin-top: 4px;
+            z-index: 999999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            max-height: 240px;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .options.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .option {
+            padding: 14px 20px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border-bottom: 1px solid #f8f9fa;
+            color: #495057;
+        }
+        
+        .option:last-child {
+            border-bottom: none;
+        }
+        
+        .option:hover {
+            background-color: #f8f9fa;
+            color: #667eea;
+        }
+        
+        .option.selected {
+            background-color: #e7f3ff;
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .option.selected::after {
+            content: '✓';
+            float: right;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .description {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 8px;
+            margin-left: 4px;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .results {
+            margin-top: 30px;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            display: none;
+        }
+        
+        .results h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .result-item {
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e9ecef;
+            color: #495057;
+        }
+        
+        .result-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .result-label {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        /* Overlay to catch clicks outside */
+        .dropdown-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999998;
+            display: none;
+        }
+        
+        .dropdown-overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Developer Profile Setup</h1>
+        
+        <div class="dropdown-container">
+            <label class="label">Programming Language</label>
+            <div class="custom-select" data-name="language">
+                <div class="select-trigger">
+                    <span>Choose your preferred programming language</span>
+                    <div class="arrow"></div>
+                </div>
+                <div class="options">
+                    <div class="option" data-value="javascript">JavaScript</div>
+                    <div class="option" data-value="python">Python</div>
+                    <div class="option" data-value="java">Java</div>
+                    <div class="option" data-value="csharp">C#</div>
+                    <div class="option" data-value="cpp">C++</div>
+                    <div class="option" data-value="php">PHP</div>
+                    <div class="option" data-value="ruby">Ruby</div>
+                    <div class="option" data-value="go">Go</div>
+                    <div class="option" data-value="rust">Rust</div>
+                    <div class="option" data-value="swift">Swift</div>
+                </div>
+            </div>
+            <div class="description">Select your primary programming language</div>
+        </div>
+        
+        <div class="dropdown-container">
+            <label class="label">Web Framework</label>
+            <div class="custom-select" data-name="framework">
+                <div class="select-trigger">
+                    <span>Choose your preferred web framework</span>
+                    <div class="arrow"></div>
+                </div>
+                <div class="options">
+                    <div class="option" data-value="react">React</div>
+                    <div class="option" data-value="vue">Vue.js</div>
+                    <div class="option" data-value="angular">Angular</div>
+                    <div class="option" data-value="svelte">Svelte</div>
+                    <div class="option" data-value="nextjs">Next.js</div>
+                    <div class="option" data-value="django">Django</div>
+                    <div class="option" data-value="flask">Flask</div>
+                    <div class="option" data-value="express">Express.js</div>
+                    <div class="option" data-value="laravel">Laravel</div>
+                    <div class="option" data-value="rails">Ruby on Rails</div>
+                </div>
+            </div>
+            <div class="description">Your preferred web development framework</div>
+        </div>
+        
+        <div class="dropdown-container">
+            <label class="label">Database Technology</label>
+            <div class="custom-select" data-name="database">
+                <div class="select-trigger">
+                    <span>Select your database preference</span>
+                    <div class="arrow"></div>
+                </div>
+                <div class="options">
+                    <div class="option" data-value="mysql">MySQL</div>
+                    <div class="option" data-value="postgresql">PostgreSQL</div>
+                    <div class="option" data-value="mongodb">MongoDB</div>
+                    <div class="option" data-value="sqlite">SQLite</div>
+                    <div class="option" data-value="redis">Redis</div>
+                    <div class="option" data-value="oracle">Oracle Database</div>
+                    <div class="option" data-value="mssql">Microsoft SQL Server</div>
+                    <div class="option" data-value="cassandra">Apache Cassandra</div>
+                    <div class="option" data-value="firebase">Firebase Firestore</div>
+                </div>
+            </div>
+            <div class="description">Choose your preferred database system</div>
+        </div>
+        
+        <div class="dropdown-container">
+            <label class="label">Cloud Platform</label>
+            <div class="custom-select" data-name="cloud">
+                <div class="select-trigger">
+                    <span>Select deployment platform</span>
+                    <div class="arrow"></div>
+                </div>
+                <div class="options">
+                    <div class="option" data-value="aws">Amazon Web Services (AWS)</div>
+                    <div class="option" data-value="gcp">Google Cloud Platform</div>
+                    <div class="option" data-value="azure">Microsoft Azure</div>
+                    <div class="option" data-value="vercel">Vercel</div>
+                    <div class="option" data-value="netlify">Netlify</div>
+                    <div class="option" data-value="heroku">Heroku</div>
+                    <div class="option" data-value="digitalocean">DigitalOcean</div>
+                    <div class="option" data-value="firebase">Firebase Hosting</div>
+                </div>
+            </div>
+            <div class="description">Where you deploy your applications</div>
+        </div>
+        
+        <div class="dropdown-container">
+            <label class="label">Development Environment</label>
+            <div class="custom-select" data-name="editor">
+                <div class="select-trigger">
+                    <span>Choose your code editor/IDE</span>
+                    <div class="arrow"></div>
+                </div>
+                <div class="options">
+                    <div class="option" data-value="vscode">Visual Studio Code</div>
+                    <div class="option" data-value="webstorm">WebStorm</div>
+                    <div class="option" data-value="sublime">Sublime Text</div>
+                    <div class="option" data-value="atom">Atom</div>
+                    <div class="option" data-value="vim">Vim</div>
+                    <div class="option" data-value="emacs">Emacs</div>
+                    <div class="option" data-value="intellij">IntelliJ IDEA</div>
+                    <div class="option" data-value="eclipse">Eclipse</div>
+                    <div class="option" data-value="xcode">Xcode</div>
+                </div>
+            </div>
+            <div class="description">Your primary development environment</div>
+        </div>
+        
+        <div class="dropdown-container">
+            <label class="label">Experience Level</label>
+            <div class="custom-select" data-name="experience">
+                <div class="select-trigger">
+                    <span>Select your experience level</span>
+                    <div class="arrow"></div>
+                </div>
+                <div class="options">
+                    <div class="option" data-value="beginner">Beginner (0-1 years)</div>
+                    <div class="option" data-value="junior">Junior (2-3 years)</div>
+                    <div class="option" data-value="mid">Mid-level (4-6 years)</div>
+                    <div class="option" data-value="senior">Senior (7-10 years)</div>
+                    <div class="option" data-value="expert">Expert (10+ years)</div>
+                </div>
+            </div>
+            <div class="description">Your years of development experience</div>
+        </div>
+        
+        <button class="submit-button" onclick="showResults()">Save Developer Profile</button>
+        
+        <div id="results" class="results">
+            <h3>Your Developer Profile</h3>
+            <div id="results-content"></div>
+        </div>
+    </div>
+    
+    <div class="dropdown-overlay" id="overlay"></div>
+    
+    <script>
+        const selects = document.querySelectorAll('.custom-select');
+        const overlay = document.getElementById('overlay');
+        const selectedValues = {};
+        
+        selects.forEach(select => {
+            const trigger = select.querySelector('.select-trigger');
+            const options = select.querySelector('.options');
+            const optionElements = select.querySelectorAll('.option');
+            const name = select.dataset.name;
+            
+            // Open dropdown
+            trigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                // Close all other dropdowns
+                selects.forEach(otherSelect => {
+                    if (otherSelect !== select) {
+                        otherSelect.querySelector('.select-trigger').classList.remove('active');
+                        otherSelect.querySelector('.options').classList.remove('show');
+                    }
+                });
+                
+                // Toggle current dropdown
+                const isActive = trigger.classList.contains('active');
+                trigger.classList.toggle('active', !isActive);
+                options.classList.toggle('show', !isActive);
+                overlay.classList.toggle('active', !isActive);
+            });
+            
+            // Handle option selection
+            optionElements.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    const value = option.dataset.value;
+                    const text = option.textContent;
+                    
+                    // Update trigger text
+                    trigger.querySelector('span').textContent = text;
+                    trigger.classList.add('selected');
+                    
+                    // Update selected state
+                    optionElements.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                    
+                    // Store selection
+                    selectedValues[name] = { value, text };
+                    
+                    // Close dropdown
+                    trigger.classList.remove('active');
+                    options.classList.remove('show');
+                    overlay.classList.remove('active');
+                });
+            });
+        });
+        
+        // Close all dropdowns when clicking overlay
+        overlay.addEventListener('click', function() {
+            selects.forEach(select => {
+                select.querySelector('.select-trigger').classList.remove('active');
+                select.querySelector('.options').classList.remove('show');
+            });
+            overlay.classList.remove('active');
+        });
+        
+        function showResults() {
+            const resultsDiv = document.getElementById('results');
+            const contentDiv = document.getElementById('results-content');
+            
+            if (Object.keys(selectedValues).length === 0) {
+                alert('Please make at least one selection before submitting.');
+                return;
+            }
+            
+            const labels = {
+                language: 'Programming Language',
+                framework: 'Web Framework',
+                database: 'Database Technology', 
+                cloud: 'Cloud Platform',
+                editor: 'Development Environment',
+                experience: 'Experience Level'
+            };
+            
+            let html = '';
+            Object.entries(selectedValues).forEach(([key, data]) => {
+                html += `<div class="result-item">
+                    <span class="result-label">${labels[key]}:</span> ${data.text}
+                </div>`;
+            });
+            
+            contentDiv.innerHTML = html;
+            resultsDiv.style.display = 'block';
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
