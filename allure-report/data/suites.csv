@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","7680","Search test for laptop","chromium","2026-06-09","passed","2026-06-09","Search functionality tests","paramTest1.spec.ts","",""
+"","9192","Search test for smartphone","chromium","2026-06-09","passed","2026-06-09","Search functionality tests","paramTest1.spec.ts","",""
+"","12263","Search test for monitor","chromium","2026-06-09","failed","2026-06-09","Search functionality tests","paramTest1.spec.ts","",""
+"","7320","Search test for Gift card","chromium","2026-06-09","passed","2026-06-09","Search functionality tests","paramTest1.spec.ts","",""
