@@ -1,0 +1,12 @@
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="12.896023999999999">
+<testsuite name="tagging.spec.ts" timestamp="2026-06-10T05:45:15.091Z" hostname="chromium" tests="4" failures="0" skipped="0" time="23.948" errors="0">
+<testcase name="Test1" classname="tagging.spec.ts" time="5.62">
+</testcase>
+<testcase name="Test2" classname="tagging.spec.ts" time="5.052">
+</testcase>
+<testcase name="Authentication tests › User can login" classname="tagging.spec.ts" time="5.411">
+</testcase>
+<testcase name="Authentication tests › Test1" classname="tagging.spec.ts" time="7.865">
+</testcase>
+</testsuite>
+</testsuites>
