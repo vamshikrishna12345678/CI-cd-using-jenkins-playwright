@@ -1,12 +1,14 @@
-<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="12.896023999999999">
-<testsuite name="tagging.spec.ts" timestamp="2026-06-10T05:45:15.091Z" hostname="chromium" tests="4" failures="0" skipped="0" time="23.948" errors="0">
-<testcase name="Test1" classname="tagging.spec.ts" time="5.62">
+<testsuites id="" name="" tests="4" failures="0" skipped="1" errors="0" time="37.277172">
+<testsuite name="demoblaze.spec.ts" timestamp="2026-06-10T06:05:04.710Z" hostname="chromium" tests="4" failures="0" skipped="1" time="64.244" errors="0">
+<testcase name="assertions" classname="demoblaze.spec.ts">
+<skipped>
+</skipped>
 </testcase>
-<testcase name="Test2" classname="tagging.spec.ts" time="5.052">
+<testcase name="Click Sony vaio i5" classname="demoblaze.spec.ts" time="7.347">
 </testcase>
-<testcase name="Authentication tests › User can login" classname="tagging.spec.ts" time="5.411">
+<testcase name="Click Sony vaio i5 - for loop" classname="demoblaze.spec.ts" time="7.395">
 </testcase>
-<testcase name="Authentication tests › Test1" classname="tagging.spec.ts" time="7.865">
+<testcase name="Click Sony vaio i5 - filter" classname="demoblaze.spec.ts" time="7.568">
 </testcase>
 </testsuite>
 </testsuites>

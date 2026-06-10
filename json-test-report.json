@@ -73,17 +73,15 @@
   },
   "suites": [
     {
-      "title": "tagging.spec.ts",
-      "file": "tagging.spec.ts",
+      "title": "demoblaze.spec.ts",
+      "file": "demoblaze.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Test1",
+          "title": "assertions",
           "ok": true,
-          "tags": [
-            "smoke"
-          ],
+          "tags": [],
           "tests": [
             {
               "timeout": 30000,
@@ -95,32 +93,43 @@
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 5620,
-                  "errors": [],
+                  "status": "interrupted",
+                  "duration": 41934,
+                  "error": {
+                    "message": "Error: browserContext.close: Test ended.\nBrowser logs:\n\n<launching> C:\\Users\\HP\\AppData\\Local\\ms-playwright\\chromium-1223\\chrome-win64\\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --user-data-dir=C:\\Users\\HP\\AppData\\Local\\Temp\\playwright_chromiumdev_profile-odkpDI --remote-debugging-pipe --no-startup-window\n<launched> pid=9112\n[pid=9112][err] [9112:16084:0610/113520.085:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR\n[pid=9112][err] [9112:16084:0610/113520.085:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR\n[pid=9112][err] [9112:16084:0610/113520.097:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR\n[pid=9112] <gracefully close start>",
+                    "stack": "Error: browserContext.close: Test ended.\nBrowser logs:\n\n<launching> C:\\Users\\HP\\AppData\\Local\\ms-playwright\\chromium-1223\\chrome-win64\\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --user-data-dir=C:\\Users\\HP\\AppData\\Local\\Temp\\playwright_chromiumdev_profile-odkpDI --remote-debugging-pipe --no-startup-window\n<launched> pid=9112\n[pid=9112][err] [9112:16084:0610/113520.085:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR\n[pid=9112][err] [9112:16084:0610/113520.085:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR\n[pid=9112][err] [9112:16084:0610/113520.097:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR\n[pid=9112] <gracefully close start>"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserContext.close: Test ended.\nBrowser logs:\n\n<launching> C:\\Users\\HP\\AppData\\Local\\ms-playwright\\chromium-1223\\chrome-win64\\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --user-data-dir=C:\\Users\\HP\\AppData\\Local\\Temp\\playwright_chromiumdev_profile-odkpDI --remote-debugging-pipe --no-startup-window\n<launched> pid=9112\n[pid=9112][err] [9112:16084:0610/113520.085:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR\n[pid=9112][err] [9112:16084:0610/113520.085:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR\n[pid=9112][err] [9112:16084:0610/113520.097:ERROR:google_apis\\gcm\\engine\\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR\n[pid=9112] <gracefully close start>"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-10T05:45:17.057Z",
+                  "startTime": "2026-06-10T06:05:06.404Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\HP\\OneDrive\\Desktop\\wipro_classfiles\\test-results\\demoblaze-assertions-chromium\\error-context.md"
+                    }
+                  ]
                 }
               ],
-              "status": "expected"
+              "status": "skipped"
             }
           ],
-          "id": "3c5c064a3d0a936b2a85-f0c483d942866b54b572",
-          "file": "tagging.spec.ts",
-          "line": 102,
+          "id": "affc45f938d63df95792-baac79525a9d9e42a6ca",
+          "file": "demoblaze.spec.ts",
+          "line": 22,
           "column": 5
         },
         {
-          "title": "Test2",
+          "title": "Click Sony vaio i5",
           "ok": true,
-          "tags": [
-            "smoke",
-            "regression"
-          ],
+          "tags": [],
           "tests": [
             {
               "timeout": 30000,
@@ -133,12 +142,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 5052,
+                  "duration": 7347,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-10T05:45:16.995Z",
+                  "startTime": "2026-06-10T06:05:06.375Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -146,102 +155,88 @@
               "status": "expected"
             }
           ],
-          "id": "3c5c064a3d0a936b2a85-45acf9bd495986c9bda3",
-          "file": "tagging.spec.ts",
-          "line": 107,
+          "id": "affc45f938d63df95792-feb4c698d85a25fb0ee1",
+          "file": "demoblaze.spec.ts",
+          "line": 75,
           "column": 5
-        }
-      ],
-      "suites": [
+        },
         {
-          "title": "Authentication tests",
-          "file": "tagging.spec.ts",
-          "line": 117,
-          "column": 6,
-          "specs": [
+          "title": "Click Sony vaio i5 - for loop",
+          "ok": true,
+          "tags": [],
+          "tests": [
             {
-              "title": "User can login",
-              "ok": true,
-              "tags": [
-                "smoke"
-              ],
-              "tests": [
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
                 {
-                  "timeout": 30000,
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 7395,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-10T06:05:06.406Z",
                   "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 5411,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-10T05:45:17.147Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "attachments": []
                 }
               ],
-              "id": "3c5c064a3d0a936b2a85-6353262965990e29b449",
-              "file": "tagging.spec.ts",
-              "line": 120,
-              "column": 9
-            },
-            {
-              "title": "Test1",
-              "ok": true,
-              "tags": [
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 7865,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-10T05:45:16.984Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "3c5c064a3d0a936b2a85-f23a437cb463a9190d55",
-              "file": "tagging.spec.ts",
-              "line": 124,
-              "column": 9
+              "status": "expected"
             }
-          ]
+          ],
+          "id": "affc45f938d63df95792-65f4b379cb99a04f7b90",
+          "file": "demoblaze.spec.ts",
+          "line": 81,
+          "column": 5
+        },
+        {
+          "title": "Click Sony vaio i5 - filter",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 7568,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-10T06:05:06.303Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "affc45f938d63df95792-03d6e4fc4eaa5fa1fc53",
+          "file": "demoblaze.spec.ts",
+          "line": 116,
+          "column": 5
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-10T05:45:14.766Z",
-    "duration": 12896.024,
-    "expected": 4,
-    "skipped": 0,
+    "startTime": "2026-06-10T06:05:04.659Z",
+    "duration": 37277.172,
+    "expected": 3,
+    "skipped": 1,
     "unexpected": 0,
     "flaky": 0
   }

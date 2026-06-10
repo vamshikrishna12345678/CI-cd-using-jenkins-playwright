@@ -1,6 +1,6 @@
 import { expect, Locator, test } from '@playwright/test'
 
-test.only('Inline filter', async ({ page }) => {
+test('Inline filter', async ({ page }) => {
     await page.goto('https://playground.bondaracademy.com/')
     await page.getByText('Forms').click()
     await page.getByText('Datepicker').click()
@@ -91,7 +91,7 @@ to it and now Without any hard coding, I am changing the dd part to tomorrow's d
 
 */
 
-test('Complex Datepicker', async ({ page }) => {
+test.only('Complex Datepicker', async ({ page }) => {
     await page.goto('https://playground.bondaracademy.com/')
     await page.getByText('Forms').click()
     await page.getByText('Datepicker').click()
@@ -124,5 +124,5 @@ test('Complex Datepicker', async ({ page }) => {
 
     await expect(calendarInputField).toHaveValue(dateToAssert)
 
-    await page.pause()
+    //await page.pause()
 })
