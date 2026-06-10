@@ -1,14 +1,12 @@
-<testsuites id="" name="" tests="4" failures="0" skipped="1" errors="0" time="37.277172">
-<testsuite name="demoblaze.spec.ts" timestamp="2026-06-10T06:05:04.710Z" hostname="chromium" tests="4" failures="0" skipped="1" time="64.244" errors="0">
-<testcase name="assertions" classname="demoblaze.spec.ts">
-<skipped>
-</skipped>
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="14.534724">
+<testsuite name="demoblaze.spec.ts" timestamp="2026-06-10T06:07:19.819Z" hostname="chromium" tests="4" failures="0" skipped="0" time="39.83" errors="0">
+<testcase name="assertions" classname="demoblaze.spec.ts" time="10.663">
 </testcase>
-<testcase name="Click Sony vaio i5" classname="demoblaze.spec.ts" time="7.347">
+<testcase name="Click Sony vaio i5" classname="demoblaze.spec.ts" time="9.462">
 </testcase>
-<testcase name="Click Sony vaio i5 - for loop" classname="demoblaze.spec.ts" time="7.395">
+<testcase name="Click Sony vaio i5 - for loop" classname="demoblaze.spec.ts" time="9.728">
 </testcase>
-<testcase name="Click Sony vaio i5 - filter" classname="demoblaze.spec.ts" time="7.568">
+<testcase name="Click Sony vaio i5 - filter" classname="demoblaze.spec.ts" time="9.977">
 </testcase>
 </testsuite>
 </testsuites>

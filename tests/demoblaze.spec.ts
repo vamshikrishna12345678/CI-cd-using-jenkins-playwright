@@ -46,7 +46,7 @@ test("assertions", async ({ page }) => {
   // await page.getByRole('button', {name: 'Log out'}).click()
 
   //await page.pause()
-});
+}); 
 
 /*
 My requirement is to click on the Sony Vaio i5 link. 
