@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 4
+      "actualWorkers": 2
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 2
         },
         "id": "chromium",
         "name": "chromium",
@@ -73,13 +73,13 @@
   },
   "suites": [
     {
-      "title": "demoblaze.spec.ts",
-      "file": "demoblaze.spec.ts",
+      "title": "frames.spec.ts",
+      "file": "frames.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "assertions",
+          "title": "Frame1",
           "ok": true,
           "tags": [],
           "tests": [
@@ -94,12 +94,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 8340,
+                  "duration": 25630,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-10T13:42:55.577Z",
+                  "startTime": "2026-06-11T07:05:42.025Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -107,13 +107,13 @@
               "status": "expected"
             }
           ],
-          "id": "affc45f938d63df95792-baac79525a9d9e42a6ca",
-          "file": "demoblaze.spec.ts",
-          "line": 21,
+          "id": "d63184237f32bf31d674-af5ccacae3e4e283bb18",
+          "file": "frames.spec.ts",
+          "line": 102,
           "column": 5
         },
         {
-          "title": "Click Sony vaio i5",
+          "title": "Frame2",
           "ok": true,
           "tags": [],
           "tests": [
@@ -128,12 +128,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 6987,
+                  "duration": 35412,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-10T13:42:55.544Z",
+                  "startTime": "2026-06-11T07:05:42.047Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -141,77 +141,9 @@
               "status": "expected"
             }
           ],
-          "id": "affc45f938d63df95792-feb4c698d85a25fb0ee1",
-          "file": "demoblaze.spec.ts",
-          "line": 74,
-          "column": 5
-        },
-        {
-          "title": "Click Sony vaio i5 - for loop",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 7174,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-10T13:42:55.563Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "affc45f938d63df95792-65f4b379cb99a04f7b90",
-          "file": "demoblaze.spec.ts",
-          "line": 80,
-          "column": 5
-        },
-        {
-          "title": "Click Sony vaio i5 - filter",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
-                  "status": "passed",
-                  "duration": 6741,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-10T13:42:55.637Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "affc45f938d63df95792-03d6e4fc4eaa5fa1fc53",
-          "file": "demoblaze.spec.ts",
-          "line": 115,
+          "id": "d63184237f32bf31d674-888693d3f4849f082210",
+          "file": "frames.spec.ts",
+          "line": 117,
           "column": 5
         }
       ]
@@ -219,9 +151,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-10T13:42:54.121Z",
-    "duration": 13871.614000000001,
-    "expected": 4,
+    "startTime": "2026-06-11T07:05:40.655Z",
+    "duration": 28598.585000000003,
+    "expected": 2,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

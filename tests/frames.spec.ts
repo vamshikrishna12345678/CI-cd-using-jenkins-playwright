@@ -111,7 +111,7 @@ test('Frame1', async ({page}) => {
     await frameEle.locator('#RESULT_TextField-3').fill('Location')
     await frameEle.locator('#RESULT_TextArea-5').fill('This is a description')
   
-    await page.pause()    
+    //await page.pause()    
 })
 
 test('Frame2', async ({page}) => {
