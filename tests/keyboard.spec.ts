@@ -55,7 +55,7 @@ test('Keyboard actions - Only MAC', async ({ page }) => {
     // await page.keyboard.up('Tab')
     await page.keyboard.press('Tab')
     await page.keyboard.press('Meta+V')
-    await page.pause()
+   // await page.pause()
 })
 
 //Your test case should work on all the platforms - Windows/MAC
@@ -77,5 +77,5 @@ test.only('Keyboard actions - Both Windows & MAC', async ({ page }) => {
     await page.keyboard.press('ControlOrMeta+V')
 
     await expect(text2).toHaveValue('This is my text')
-    await page.pause()
+   // await page.pause()
 })

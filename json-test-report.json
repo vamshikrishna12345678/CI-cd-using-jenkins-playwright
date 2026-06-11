@@ -73,13 +73,13 @@
   },
   "suites": [
     {
-      "title": "frames.spec.ts",
-      "file": "frames.spec.ts",
+      "title": "firstTest.spec.ts",
+      "file": "firstTest.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Frame1",
+          "title": "my first test",
           "ok": true,
           "tags": [],
           "tests": [
@@ -94,12 +94,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 25630,
+                  "duration": 9466,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-11T07:05:42.025Z",
+                  "startTime": "2026-06-11T07:19:36.480Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -107,13 +107,13 @@
               "status": "expected"
             }
           ],
-          "id": "d63184237f32bf31d674-af5ccacae3e4e283bb18",
-          "file": "frames.spec.ts",
-          "line": 102,
+          "id": "2d97cacf9e08b8e15aba-11ca562c9492846741c7",
+          "file": "firstTest.spec.ts",
+          "line": 24,
           "column": 5
         },
         {
-          "title": "Frame2",
+          "title": "navigate to Datepicker page",
           "ok": true,
           "tags": [],
           "tests": [
@@ -128,12 +128,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 35412,
+                  "duration": 9429,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-11T07:05:42.047Z",
+                  "startTime": "2026-06-11T07:19:36.504Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -141,9 +141,9 @@
               "status": "expected"
             }
           ],
-          "id": "d63184237f32bf31d674-888693d3f4849f082210",
-          "file": "frames.spec.ts",
-          "line": 117,
+          "id": "2d97cacf9e08b8e15aba-643419b4dd1438281380",
+          "file": "firstTest.spec.ts",
+          "line": 31,
           "column": 5
         }
       ]
@@ -151,8 +151,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-11T07:05:40.655Z",
-    "duration": 28598.585000000003,
+    "startTime": "2026-06-11T07:19:35.145Z",
+    "duration": 13735.014000000001,
     "expected": 2,
     "skipped": 0,
     "unexpected": 0,

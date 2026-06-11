@@ -1,8 +1,8 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="28.598585000000003">
-<testsuite name="frames.spec.ts" timestamp="2026-06-11T07:05:40.713Z" hostname="chromium" tests="2" failures="0" skipped="0" time="61.042" errors="0">
-<testcase name="Frame1" classname="frames.spec.ts" time="25.63">
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="13.735014000000001">
+<testsuite name="firstTest.spec.ts" timestamp="2026-06-11T07:19:35.193Z" hostname="chromium" tests="2" failures="0" skipped="0" time="18.895" errors="0">
+<testcase name="my first test" classname="firstTest.spec.ts" time="9.466">
 </testcase>
-<testcase name="Frame2" classname="frames.spec.ts" time="35.412">
+<testcase name="navigate to Datepicker page" classname="firstTest.spec.ts" time="9.429">
 </testcase>
 </testsuite>
 </testsuites>
