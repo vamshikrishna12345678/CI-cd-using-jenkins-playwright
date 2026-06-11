@@ -128,7 +128,7 @@ test('Frame2', async ({page}) => {
     await frame2.locator('#jex').fill('Crush 2')
     await frame3.locator('#glaf').fill('Destiny')
   
-    await page.pause()    
+   // await page.pause()    
 })
 
 /*
