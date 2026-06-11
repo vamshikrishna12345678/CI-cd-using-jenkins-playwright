@@ -59,7 +59,7 @@ test('Keyboard actions - Only MAC', async ({ page }) => {
 })
 
 //Your test case should work on all the platforms - Windows/MAC
-test.only('Keyboard actions - Both Windows & MAC', async ({ page }) => {
+test('Keyboard actions - Both Windows & MAC', async ({ page }) => {
     await page.goto('https://gotranscript.com/text-compare')
 
     // await page.locator('[name="text1"]').fill('This is my text')

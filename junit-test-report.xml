@@ -1,8 +1,6 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="13.735014000000001">
-<testsuite name="firstTest.spec.ts" timestamp="2026-06-11T07:19:35.193Z" hostname="chromium" tests="2" failures="0" skipped="0" time="18.895" errors="0">
-<testcase name="my first test" classname="firstTest.spec.ts" time="9.466">
-</testcase>
-<testcase name="navigate to Datepicker page" classname="firstTest.spec.ts" time="9.429">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="6.256782">
+<testsuite name="keyboard.spec.ts" timestamp="2026-06-11T08:28:34.569Z" hostname="chromium" tests="1" failures="0" skipped="0" time="3.205" errors="0">
+<testcase name="Keyboard actions - Both Windows &amp; MAC" classname="keyboard.spec.ts" time="3.205">
 </testcase>
 </testsuite>
 </testsuites>

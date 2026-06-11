@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 2
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 2
+          "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
@@ -73,13 +73,13 @@
   },
   "suites": [
     {
-      "title": "firstTest.spec.ts",
-      "file": "firstTest.spec.ts",
+      "title": "keyboard.spec.ts",
+      "file": "keyboard.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "my first test",
+          "title": "Keyboard actions - Both Windows & MAC",
           "ok": true,
           "tags": [],
           "tests": [
@@ -94,12 +94,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 9466,
+                  "duration": 3205,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-11T07:19:36.480Z",
+                  "startTime": "2026-06-11T08:28:35.369Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -107,53 +107,19 @@
               "status": "expected"
             }
           ],
-          "id": "2d97cacf9e08b8e15aba-11ca562c9492846741c7",
-          "file": "firstTest.spec.ts",
-          "line": 24,
-          "column": 5
-        },
-        {
-          "title": "navigate to Datepicker page",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 9429,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-11T07:19:36.504Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "2d97cacf9e08b8e15aba-643419b4dd1438281380",
-          "file": "firstTest.spec.ts",
-          "line": 31,
-          "column": 5
+          "id": "866d5cea7c69e902a1e2-ea1207e3808fca2771e6",
+          "file": "keyboard.spec.ts",
+          "line": 62,
+          "column": 6
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-11T07:19:35.145Z",
-    "duration": 13735.014000000001,
-    "expected": 2,
+    "startTime": "2026-06-11T08:28:34.534Z",
+    "duration": 6256.782,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
